@@ -51,7 +51,7 @@ kubectl get statefulset -o wide
 kubectl get ingress -o wide
 
 #check status environment in server 
-kubectl top pod --namespace=3cj
+kubectl top pod --namespace=abc
 
 # Delete pod 
 
