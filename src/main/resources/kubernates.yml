@@ -1,0 +1,78 @@
+# for the kubernates configuration  command
+
+# ----> To Start Kubernates Steps
+start kubectl.exe
+
+# -----> To get all PODS
+
+kubectl get pod
+
+# ------> To see the logs in the particular pod 
+
+kubectl.exe logs <pod-name>
+
+
+# ----> To start and stop pod manually 
+
+# For stop
+kubectl.exe scale statefulsets <pod-name> --replicas=0  
+
+# For start
+kubectl.exe scale statefulsets <pod-name> --replicas=1
+
+
+# 
+
+# To see list of folder in a particular pod access
+
+# List Folder in pod
+kubectl exec --stdin --tty <pod-name> --ls -l/
+
+# create Folder
+kubectl exec --stdin --tty <pod-name> --mkdir -p /folder1/folder2/ 
+
+
+
+#List folder in pod and access to folder 
+kubectl exec --stdin --tty <pod-name> --ls -l /folder1/folder2 --> use the path here
+
+# ssh to access pod
+kubectl exec -it <pod-name> --/bin/bash
+
+#check pod / statefulset / ingress
+
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+kubectl get pod <pod-name> -o yaml
+kubectl get pod -o wide
+kubectl get statefulset -o wide
+kubectl get ingress -o wide
+
+#check status environment in server 
+kubectl top pod --namespace=3cj
+
+# Delete pod 
+
+kubectl delete pod <pod-name> --force
+
+# check name space
+
+kubectl get ns
+
+kubectl describe ns
+
+kubectl config view --minify o jsonpath='{..namespace}'
+
+# check resource
+
+kubectl get quota
+
+##stop pod
+kubectl scale --replicas=0 statefullset <statedulset-name>
+kubectl scale --replicas=0 deployment <deployment-name>
+
+
+
+
+
+
