@@ -12,6 +12,7 @@ kubectl get pod
 kubectl.exe logs <pod-name>
 
 
+
 # ----> To start and stop pod manually 
 
 # For stop
