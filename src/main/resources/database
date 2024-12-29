@@ -1,1 +1,8 @@
+# Why  we are going to use Non-Relational Database.
+ There are four main key concepts  to choice of right database.
+ 1. Your apllication required super-low latency.
+ 2. Your data are unstructured , or you do not have any relational data.
+ 3. You only need to serialize and deserialize data (JSON , XML , YAML, etc.)
+ 4. You need to store a massive amount of data.
+
 
