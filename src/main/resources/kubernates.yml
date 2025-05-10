@@ -7,6 +7,10 @@ start kubectl.exe
 
 kubectl get pod
 
+# -----> To get the Port details By using
+
+kubectl get services
+
 # ------> To see the logs in the particular pod 
 
 kubectl.exe logs <pod-name>
