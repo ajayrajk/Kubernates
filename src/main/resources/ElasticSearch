@@ -1,7 +1,6 @@
 why Elasticsearch can’t start, which then causes SonarQube to shut down.
 
 How to fix it
-
 You have two choices:
 
 Option 1: Kill the process using port 9001 (recommended).
