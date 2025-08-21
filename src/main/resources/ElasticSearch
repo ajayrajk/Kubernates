@@ -1,0 +1,54 @@
+why Elasticsearch can’t start, which then causes SonarQube to shut down.
+
+How to fix it
+
+You have two choices:
+
+Option 1: Kill the process using port 9001 (recommended).
+
+Option 2: Change Elasticsearch port in SonarQube config.
+
+Option 1 – Free port 9001
+On Windows:
+
+Open Command Prompt and run:
+
+netstat -ano | find "9001"
+
+
+You’ll see something like:
+
+TCP    127.0.0.1:9001     0.0.0.0:0     LISTENING     1234
+
+
+The last number is the PID (e.g., 1234).
+
+Kill that process:
+
+taskkill /PID 1234 /F
+
+
+Restart SonarQube:
+
+C:\SonarQube\bin\windows-x86-64\StartSonar.bat
+
+Option 2 – Change Elasticsearch port
+
+If you can’t free 9001:
+
+Open:
+
+<sonarqube_install_dir>\conf\sonar.properties
+
+
+Find:
+
+#sonar.search.port=9001
+
+
+Uncomment and change it, e.g.:
+
+sonar.search.port=9010
+
+
+Save and restart SonarQube.
