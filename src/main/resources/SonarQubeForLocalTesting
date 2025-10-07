@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar -Dsonar.login="token need to paste her" -Dsonar.projectName="project name need to paste here" -Dsonar.projectKey="project key need to paste here" 
